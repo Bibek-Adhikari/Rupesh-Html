@@ -1,53 +1,68 @@
 <!DOCTYPE html>
-<html> 
-<head> 
-    <title>
-        My website
-    </title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rupesh Adhikari - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <style>  
-header, footer{
-    padding: 10px;
-    background-color: green;
-    color: white;
-    text-align: center;
-}
-nav ul li{
-    display: inline;
-    padding: 10px;
-    background-color: black;
-
-}
-a{
-    color: white;
-    text-decoration: underline;
-}
-
-    </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
     <header>
-        <h1> Welcome to my first Portfolio</h1>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Rupesh Adhikari &mdash; Aspiring Web Developer</p>
+        <span class="tagline">HTML &bull; CSS &bull; JavaScript</span>
     </header>
-<nav>
-    <ul>
-        <li><a href="First.html"> Home</a></li>
-        <li><a href="interest.html"> Interest</a></li>
-        <li><a href="contact.html"> Contact Me</a></li>
-        <li><a href="gallery.html"> Gallery</a></li>
-        <li><a href="frindlist.html"> Frind List</a></li>
-    </ul>
-</nav>
-<h3> About Me</h3>
-<img src="bcanepal.jpg" height="300" width="300">
-<p title="About Rupesh Adhkari"><strong> This is my first website.</strong> I am learning HTML and this is my first attempt at creating a website. </em> I hope you enjoy it!</p>
-<!-- Comment for copyright information -->
-<p> Copyright &copy; 2026 My Website. All rights reserved. Rupesh Adhikari</p>
-<!-- Sub for keeping smth in down base -->
-<p> H<sub>2</sub>O</p>
-<footer>
-<!-- sup for keeping smth in up base -->
-<p> a<sup>2</sup>+2ab+b<sup>2</sup></p>
-</footer>
+
+    <nav>
+        <ul>
+            <li><a href="First.html" class="active">Home</a></li>
+            <li><a href="interest.html">Interest</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="frindlist.html">Friend List</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <section>
+            <h2>About Me</h2>
+            <div class="card hero">
+                <img src="bcanepal.jpg" alt="Rupesh Adhikari" class="profile-img">
+                <div class="hero-text">
+                    <p><strong>Hi, I'm Rupesh Adhikari.</strong> This is my first website. I am learning HTML and this is my first attempt at creating a website. I hope you enjoy it!</p>
+                    <p>I am passionate about building modern web experiences and continuously improving my skills in frontend development.</p>
+                </div>
+                <p class="meta-info">Copyright &copy; 2026 Rupesh Adhikari. All rights reserved.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" title="LinkedIn" aria-label="LinkedIn">in</a>
+            <a href="#" title="GitHub" aria-label="GitHub">gh</a>
+            <a href="#" title="YouTube" aria-label="YouTube">yt</a>
+        </div>
+        <p>a<sup>2</sup> + 2ab + b<sup>2</sup> &nbsp;|&nbsp; H<sub>2</sub>O &nbsp;|&nbsp; Built with &hearts;</p>
+    </footer>
+
+    <a href="#top" class="scroll-top" id="scrollTop" title="Back to top" aria-label="Back to top">&#8593;</a>
+
+    <script>
+        var scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+        scrollBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>

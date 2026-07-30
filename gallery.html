@@ -1,43 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>
-        Gallery
-    </title> 
-     <style>  
-h1{
-    padding: 10px;
-    background-color: green;
-    color: white;
-    text-align: center;
-}
-footer{
-
-font-size: 20px;
-    padding: 10px;
-    color:white;
-    text-align:center;
-        background-color:blue;}
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Rupesh Adhikari</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1> My Gallery</h1>
-    <a href="first.html"> Home</a>
-    <a href="interest.html"> Interest</a>
-    <a href="contact.html"> Contact Me</a>
-    <a href="gallery.html"> Gallery</a> 
-    <a href="frindlist.html"> Frind List</a>    
-    <h3>
-        My Gallery
-    </h3>
-    <a href="bcanepal.jpg">
-    <img src="bcanepal.jpg" height="300" width="300">
-    <video  width="300"height="400" controls>
-        <source src="video/vid.mp4" type="video/mp4">
-    </video>
-    <audio controls>
-        <source src="audio/geet.mp3" type="audio/mp3">
-    </audio>
-    </a>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <header>
+        <h1>My Gallery</h1>
+        <p>Moments captured in media</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="First.html">Home</a></li>
+            <li><a href="interest.html">Interest</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="frindlist.html">Friend List</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <section>
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <a href="bcanepal.jpg">
+                        <img src="bcanepal.jpg" alt="BCA Nepal">
+                    </a>
+                    <div class="caption">BCA Nepal</div>
+                </div>
+
+                <div class="gallery-item">
+                    <video controls>
+                        <source src="video/vid.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="caption">Featured Video</div>
+                </div>
+
+                <div class="gallery-item">
+                    <audio controls>
+                        <source src="audio/geet.mp3" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+                    <div class="caption">Featured Audio</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" title="LinkedIn" aria-label="LinkedIn">in</a>
+            <a href="#" title="GitHub" aria-label="GitHub">gh</a>
+            <a href="#" title="YouTube" aria-label="YouTube">yt</a>
+        </div>
+        <p>Rupesh Adhikari &mdash; Gallery</p>
+    </footer>
+
+    <a href="#top" class="scroll-top" id="scrollTop" title="Back to top" aria-label="Back to top">&#8593;</a>
+
+    <script>
+        var scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+        scrollBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>

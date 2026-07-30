@@ -1,53 +1,155 @@
-<nav>
-    <a href="#" onclick="showSection('home')">Home</a>
-    <a href="#" onclick="showSection('interest')">Interest</a>
-    <a href="#" onclick="showSection('gallery')">Gallery</a>
-    <a href="#" onclick="showSection('friend')">Friend List</a>
-    <a href="#" onclick="showSection('contact')">Contact Me</a>
-</nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rupesh Adhikari - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
 
-<section id="home" class="page">
-    <h2>Home</h2>
-    <p>Welcome to my portfolio.</p>
-</section>
+    <header>
+        <h1>Rupesh Adhikari</h1>
+        <p>Aspiring Developer &amp; Creator</p>
+        <span class="tagline">Web Designer &bull; Developer &bull; Learner</span>
+    </header>
 
-<section id="interest" class="page">
-    <h2>Interest</h2>
-    <!-- Put your interest page code here -->
-</section>
+    <nav>
+        <div class="nav-links">
+            <a href="#" onclick="showSection('home', this)" class="active">Home</a>
+            <a href="#" onclick="showSection('interest', this)">Interest</a>
+            <a href="#" onclick="showSection('gallery', this)">Gallery</a>
+            <a href="#" onclick="showSection('friend', this)">Friend List</a>
+            <a href="#" onclick="showSection('contact', this)">Contact Me</a>
+        </div>
+    </nav>
 
-<section id="gallery" class="page">
-    <h2>Gallery</h2>
-    <!-- Put your gallery page code here -->
-</section>
+    <main id="main-content">
+        <section id="home" class="page">
+            <h2>Home</h2>
+            <div class="card hero">
+                <p>Welcome to my portfolio. I'm Rupesh Adhikari, a passionate learner exploring the world of web development. Here you can find my interests, gallery, and ways to contact me.</p>
+            </div>
 
-<section id="friend" class="page">
-    <h2>Friend List</h2>
-    <!-- Put your friend list code here -->
-</section>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Pages</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Portfolio</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">2026</div>
+                    <div class="stat-label">Year</div>
+                </div>
+            </div>
+        </section>
 
-<section id="contact" class="page">
-    <h2>Contact Me</h2>
-    <!-- Put your contact form here -->
-</section>
-.page{
-    display:none;
-    padding:20px;
-}
+        <section id="interest" class="page">
+            <h2>Interest</h2>
+            <div class="card">
+                <ul class="interest-list">
+                    <li><strong>Mathematics</strong> &mdash; Math is love</li>
+                    <li><strong>YouTube</strong> &mdash; I upload videos</li>
+                    <li><strong>Coding</strong> &mdash; Building the future</li>
+                </ul>
+            </div>
+        </section>
 
-#home{
-    display:block;
-}
-<script>
-function showSection(id)
-{
-    var pages = document.getElementsByClassName("page");
+        <section id="gallery" class="page">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="bcanepal.jpg" alt="BCA Nepal">
+                    <div class="caption">BCA Nepal</div>
+                </div>
+            </div>
+        </section>
 
-    for(var i = 0; i < pages.length; i++)
-    {
-        pages[i].style.display = "none";
-    }
+        <section id="friend" class="page">
+            <h2>Friend List</h2>
+            <div class="card">
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Phone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Rupesh</td><td>Adhikari</td><td>9708098543</td></tr>
+                            <tr><td>Mrs.</td><td>Adhikari</td><td>97********</td></tr>
+                            <tr><td>Mr.</td><td>Adhikari</td><td>97********</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
 
-    document.getElementById(id).style.display = "block";
-}
-</script>
+        <section id="contact" class="page">
+            <h2>Contact Me</h2>
+            <div class="card">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="msg">Message</label>
+                        <textarea id="msg" placeholder="Your message"></textarea>
+                    </div>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" title="LinkedIn" aria-label="LinkedIn">in</a>
+            <a href="#" title="GitHub" aria-label="GitHub">gh</a>
+            <a href="#" title="YouTube" aria-label="YouTube">yt</a>
+        </div>
+        <p>Rupesh Adhikari &mdash; Built with &hearts;</p>
+    </footer>
+
+    <a href="#top" class="scroll-top" id="scrollTop" title="Back to top" aria-label="Back to top">&#8593;</a>
+
+    <script>
+        function showSection(id, el) {
+            var pages = document.querySelectorAll('.page');
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].style.display = 'none';
+            }
+            var target = document.getElementById(id);
+            if (target) {
+                target.style.display = 'block';
+            }
+
+            var links = document.querySelectorAll('nav .nav-links a');
+            for (var j = 0; j < links.length; j++) {
+                links[j].classList.remove('active');
+            }
+            el.classList.add('active');
+        }
+
+        var scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+        scrollBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

@@ -1,77 +1,99 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            Frind List
-        </title>
-         <style>  
-h1{
-    padding: 10px;
-    background-color: green;
-    color: white;
-    text-align: center;
-}
-footer{
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend List - Rupesh Adhikari</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
 
-font-size: 20px;
-    padding: 10px;
-    color:white;
-    text-align:center;
-        background-color:blue;}
-    </style>
-        <style>
-            tr, td, th{
-                border: 1px solid black;
+    <header>
+        <h1>My Friend List</h1>
+        <p>People who matter</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="First.html">Home</a></li>
+            <li><a href="interest.html">Interest</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="frindlist.html" class="active">Friend List</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <section>
+            <h2>Friend List</h2>
+            <div class="card">
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th colspan="2">Phone Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rupesh</td>
+                                <td>Adhikari</td>
+                                <td>9708098543</td>
+                                <td>9702068041</td>
+                            </tr>
+                            <tr>
+                                <td>Mrs.</td>
+                                <td>Adhikari</td>
+                                <td>97********</td>
+                                <td>97********</td>
+                            </tr>
+                            <tr>
+                                <td>Mr.</td>
+                                <td>Adhikari</td>
+                                <td>97********</td>
+                                <td>97********</td>
+                            </tr>
+                            <tr>
+                                <td>Mr.</td>
+                                <td>Adhikari</td>
+                                <td>97********</td>
+                                <td>97********</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="meta-info mt-2">Contact list for reference purposes.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" title="LinkedIn" aria-label="LinkedIn">in</a>
+            <a href="#" title="GitHub" aria-label="GitHub">gh</a>
+            <a href="#" title="YouTube" aria-label="YouTube">yt</a>
+        </div>
+        <p>Rupesh Adhikari &mdash; Friends &amp; Family</p>
+    </footer>
+
+    <a href="#top" class="scroll-top" id="scrollTop" title="Back to top" aria-label="Back to top">&#8593;</a>
+
+    <script>
+        var scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
             }
-        </style>
-    </head>
-    <body>
-        <h1> My Frind List </h1>
-        <nav>
-            <ul>
-                <li><a href="first.html"> Home</a></li>
-                <li><a href="interest.html"> Interest</a></li>
-                <li><a href="contact.html"> Contact Me</a></li>
-                <li><a href="gallery.html"> Gallery</a></li>
-                <li><a href="frindlist.html"> Frind List</a></li>
-            </ul>
-        </nav>
-        <a href="gallery.html"> Gallery</a>
-        <a href="frindlist.html"> Frind List</a>
-        <h3> My Frind List </h3>
-
-        <table>
-            <tr>
-                <th> First Name</th>
-                <th> Last Name </th>
-                <th colspan="2"> Phone Number </th>
-            </tr>
-            <tr>
-                <td> Rupesh </td>
-                <td> Adhikari </td>
-                <td> 9708098543 </td>
-                <td> 9702068041</td>
-            </tr>
-            <tr>
-                <td> Mrs. </td>
-                <td> Adhikari </td>
-                <td> 97******** </td>
-                <td> 97******** </td>
-            </tr>
-            <tr>
-                <td> Mr. </td>
-                <td> Adhikari </td>
-                <td> 97******** </td>
-                <td> 97******** </td>
-            </tr>
-            <tr>
-                <td> Mr. </td>
-                <td> Adhikari </td>
-                <td> 97******** </td>
-                <td> 97******** </td>
-            </tr>
-
-        </table>
-
-    </body>
+        });
+        scrollBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
 </html>

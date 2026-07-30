@@ -1,67 +1,98 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            Interest
-        </title>
-         <style>  
-h1{
-    padding: 10px;
-    background-color: green;
-    color: white;
-    text-align: center;
-}
-footer{
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interests - Rupesh Adhikari</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
 
-font-size: 20px;
-    padding: 10px;
-    color:white;
-    text-align:center;
-        background-color:blue;}
-    </style>
-    </head>
-    <body>
-        <h1> My Interest is on you. </h1>
-        <a href="first.html"> Home</a>
-        <a href="interest.html"> Interest</a>
-        <a href="contact.html"> Contact Me</a>
-        <a href="gallery.html"> Gallery</a>
-        <a href="frindlist.html"> Frind List</a>    
-<h3> Rupesh Adhikari's Interests </h3>
-<ul type="square">
-    <li>  Math is love  </li>
-    <li>  I love......? 
+    <header>
+        <h1>My Interests</h1>
+        <p>Things I love and enjoy</p>
+    </header>
+
+    <nav>
         <ul>
-            <li> You </li>
-            <li> Yes only you </li>
-            <li> Always You </li>
+            <li><a href="First.html">Home</a></li>
+            <li><a href="interest.html" class="active">Interest</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="frindlist.html">Friend List</a></li>
         </ul>
-    </li>
-    <li>  I upload videos in youtube.</li>
-</ul>
+    </nav>
 
-<ul type="none">
-    <li>  Math is love  </li>
-    <li>  I love you. </li>
-    <li>  I upload videos in youtube.</li>
-</ul>
+    <main id="main-content">
+        <section>
+            <h2>Rupesh Adhikari's Interests</h2>
 
+            <div class="info-grid">
+                <div class="card">
+                    <h3>What I Love</h3>
+                    <ul class="interest-list">
+                        <li><strong>Mathematics</strong> &mdash; Math is love</li>
+                        <li><strong>Coding</strong> &mdash; Building things on the web</li>
+                        <li><strong>YouTube</strong> &mdash; I upload videos on YouTube</li>
+                    </ul>
+                </div>
 
-<ol type="A">
-    <li>  Math is love  </li>
-    <li>  I love you. </li>
-    <li>  I upload videos in youtube.</li>
-</ol>
+                <div class="card">
+                    <h3>Ordered Interests</h3>
+                    <ol type="A" class="interest-list">
+                        <li>Math is love</li>
+                        <li>I love coding</li>
+                        <li>I upload videos on YouTube</li>
+                    </ol>
+                </div>
+            </div>
 
+            <div class="card">
+                <h3>Definitions</h3>
+                <dl>
+                    <dt>Derivatives</dt>
+                    <dd>A branch of mathematics that studies the rates at which quantities change.</dd>
+                    <dt>Integration</dt>
+                    <dd>A branch of mathematics that deals with the accumulation of quantities.</dd>
+                    <dt>Author</dt>
+                    <dd>The author of this webpage is Rupesh Adhikari.</dd>
+                </dl>
+            </div>
 
-<dl>
-    <dt> Derivatives </dt>
-    <dd> -Derivatives is a branch of mathematics that studies the rates at which quantities change. </dd>
-    <dt> Integration </dt>
-    <dd> -Integration is a branch of mathematics that deals with the accumulation of quantities. </dd>  
-    <dt> Author </dt>
-    <dd> -The author of this webpage is Rupesh Adhikari. </dd>
-</dl>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/I7-TgoUR8RY?si=85FZYCW-zF5C2Y3F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </body>
+            <div class="card">
+                <h3>Featured Video</h3>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/I7-TgoUR8RY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" title="LinkedIn" aria-label="LinkedIn">in</a>
+            <a href="#" title="GitHub" aria-label="GitHub">gh</a>
+            <a href="#" title="YouTube" aria-label="YouTube">yt</a>
+        </div>
+        <p>Rupesh Adhikari &mdash; Interests &amp; Passions</p>
+    </footer>
+
+    <a href="#top" class="scroll-top" id="scrollTop" title="Back to top" aria-label="Back to top">&#8593;</a>
+
+    <script>
+        var scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+        scrollBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
 </html>

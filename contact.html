@@ -1,70 +1,119 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            Contact
-        </title>
-         <style>  
-h1{
-    padding: 10px;
-    background-color: green;
-    color: white;
-    text-align: center;
-}
-footer{
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Rupesh Adhikari</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
 
-font-size: 20px;
-    padding: 10px;
-    color:white;
-    text-align:center;
-        background-color:blue;}
-    </style>
-    </head>
-    <body>
-        <h1>
-            Contact Me
-        </h1>
-            <a href="first.html"> Home </a>
-            <a href="interest.html"> Interest </a>
-            <a href="contact.html"> Contact Me </a>
-            <a href="gallery.html"> Gallery </a>
-            <a href="frindlist.html"> Frind List </a>
-        <h3> Contact Me </h3>
-        <form>
-            <fieldset>
-            <legend> Enter your details: </legend>
-            <label> Full Name </label>
-            <input type="text" name="Full name" placeholder="Enter full name"><br>
-            <label> Phone Number</label>
-            <input type="number" name="Phone" max="10" min="0"><br>
-            <label> Gender </label>
-            <input type="radio" name="Gender" value="Male"> Male
-            <input type="radio" name="Gender" value="Female"> Female
-            <input type="radio" name="Gender" value="Other"> Other
-            <br>
-            <label> Password </label>
-            <input type="password" name="Pass">
-            <br>
-            <label> choose Country </label><br>
-            <select>
-                <option> Nepal </option>
-                <option> India </option>
-                <option> China </option>    
-            </select>
-             <br>
-            <label> Choose your interest </label>
-            <input type="checkbox" name="playing"> Playing
-            <input type="checkbox" name="reading"> Reading  
-            <input type="checkbox" name="travelling"> Travelling
-            <br>
-            <input type="hidden" name="hidden" value="hidden">
-            <input type="submit" name="submit" value="Submit">
-            <br>
-            <label> Message </label>
-            <textarea></textarea>
-            <input type="submit">
-            </fieldset>
-        </form>
-        
-    </body>
+    <header>
+        <h1>Contact Me</h1>
+        <p>I'd love to hear from you</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="First.html">Home</a></li>
+            <li><a href="interest.html">Interest</a></li>
+            <li><a href="contact.html" class="active">Contact Me</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="frindlist.html">Friend List</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <section>
+            <h2>Get in Touch</h2>
+            <div class="card">
+                <form>
+                    <fieldset>
+                        <legend>Your Details</legend>
+
+                        <div class="form-group">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="Full name" placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="number" id="phone" name="Phone" maxlength="10" placeholder="Enter phone number">
+                        </div>
+
+                        <label>Gender</label>
+                        <div class="form-row">
+                            <input type="radio" name="Gender" value="Male" id="male">
+                            <label for="male" style="display:inline; margin-bottom:0;">Male</label>
+                            <input type="radio" name="Gender" value="Female" id="female">
+                            <label for="female" style="display:inline; margin-bottom:0;">Female</label>
+                            <input type="radio" name="Gender" value="Other" id="other">
+                            <label for="other" style="display:inline; margin-bottom:0;">Other</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="Pass" placeholder="Enter password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">Choose Country</label>
+                            <select id="country">
+                                <option>Nepal</option>
+                                <option>India</option>
+                                <option>China</option>
+                            </select>
+                        </div>
+
+                        <label>Choose your interest</label>
+                        <div class="form-row">
+                            <input type="checkbox" name="playing" id="playing">
+                            <label for="playing" style="display:inline; margin-bottom:0;">Playing</label>
+                            <input type="checkbox" name="reading" id="reading">
+                            <label for="reading" style="display:inline; margin-bottom:0;">Reading</label>
+                            <input type="checkbox" name="travelling" id="travelling">
+                            <label for="travelling" style="display:inline; margin-bottom:0;">Travelling</label>
+                        </div>
+
+                        <input type="hidden" name="hidden" value="hidden">
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Write your message here..."></textarea>
+                        </div>
+
+                        <input type="submit" name="submit" value="Submit">
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" title="LinkedIn" aria-label="LinkedIn">in</a>
+            <a href="#" title="GitHub" aria-label="GitHub">gh</a>
+            <a href="#" title="YouTube" aria-label="YouTube">yt</a>
+        </div>
+        <p>Rupesh Adhikari &mdash; Always happy to connect</p>
+    </footer>
+
+    <a href="#top" class="scroll-top" id="scrollTop" title="Back to top" aria-label="Back to top">&#8593;</a>
+
+    <script>
+        var scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+        scrollBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
 </html>
